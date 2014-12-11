@@ -1,7 +1,6 @@
 <?php
 date_default_timezone_set('Europe');
 
-//nicemondays twitter dev account
 $twitter = array(
     'consumer_key' =>           '',
     'consumer_secret' =>        '',
@@ -9,7 +8,6 @@ $twitter = array(
     'access_token_secret' =>    ''
 );
 
-//nicemondays instagram dev account
 $instagram = array(
     'client_id' =>      '',
     'client_secret' =>  '',
