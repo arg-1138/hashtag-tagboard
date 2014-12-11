@@ -1,0 +1,35 @@
+/* 
+------------------------------------------------
+LISTS
+------------------------------------------------
+*/
+
+@if $use-lists {
+
+	%list,
+	.list {
+		padding: 0;
+		margin: 0;
+	}
+
+	%list--unstyled,
+	.list--unstyled {
+		list-style:none;
+	}
+
+	%list--inline,
+	.list--inline {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		& > li{
+			display: inline-block;
+			margin-left: 0.3em;
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+	}
+	
+}
+

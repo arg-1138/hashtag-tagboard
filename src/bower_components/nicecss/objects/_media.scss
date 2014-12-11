@@ -1,0 +1,31 @@
+/* 
+------------------------------------------------
+MEDIA (@stubbornella)
+------------------------------------------------
+*/
+
+.media { 
+	$media-margin: 10px;
+	@extend %clearfix;
+	&__body {
+		overflow: hidden;
+	}
+	&__image {
+		float: left;
+		margin-right: $media-margin;
+		img {
+			display: block;
+		}
+		.media--right & {
+			float: right;
+			margin-left: $media-margin;
+			margin-right: 0;
+		}
+		.media--wide & {
+			margin-right: $media-margin * 3;
+		}
+		.media--wide.media--right & {
+			margin-left: $media-margin * 3;
+		}
+	}
+}

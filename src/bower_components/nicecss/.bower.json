@@ -1,0 +1,32 @@
+{
+  "name": "nicecss",
+  "version": "0.5.3",
+  "homepage": "https://github.com/sosoviak/nicecss",
+  "authors": [
+    "Oscar Montañés <oscar@nicemondays.com>"
+  ],
+  "description": "Nice CSS Framework",
+  "main": "nicecss.scss",
+  "keywords": [
+    "css",
+    "scss",
+    "framework"
+  ],
+  "ignore": [
+    ".gitignore",
+    "Gruntfile.js",
+    "package.json",
+    "test/",
+    "node_modules/"
+  ],
+  "license": "MIT",
+  "_release": "0.5.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.5.3",
+    "commit": "8070054d62bda7b0e98cacfb8b1a674f4c0eaf21"
+  },
+  "_source": "git://github.com/sosoviak/nicecss.git",
+  "_target": "~0.5.3",
+  "_originalSource": "nicecss"
+}

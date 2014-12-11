@@ -1,0 +1,72 @@
+.salvattore {
+	@extend %clearfix;
+	position: relative;
+	list-style:none;
+	text-align:center;
+	&__item {
+		margin: $gutter/2;
+		width: 95%;
+		display:inline-block;
+		position:relative;
+		vertical-align:top;
+		overflow:hidden;
+		background-color: $white;
+		@include border-radius(4px);
+		img {
+			width:100%;
+			@include border-top-radius(4px);
+		}
+		p{
+			margin: 0px;
+		}
+		&__user{
+			font-size: $userNameFontSize;
+			padding: 10px 10px 0px 10px;
+			.screen_name{
+				color: $grayLight;
+			}
+			.name{
+				font-weight: bold;
+			}
+			.source{
+				color: $grayLight;
+				float: right;
+			}
+		}
+		&__text{
+			padding: 10px;
+			word-wrap: break-word;
+		}
+			
+	}
+}
+
+.column { float: left; }
+.size-1of4 { width: 25%; }
+.size-1of3 { width: 33.333%; }
+.size-1of2 { width: 50%; }
+.size-1of1 { width: 100%; }
+
+
+@include respond-to(mobile) {
+	.salvattore[data-columns]::before {
+		content: '1 .column.size-1of1';
+	}
+	.salvattore__item {
+		margin: 1px;
+		width: 99%;
+	}
+}
+
+@include respond-to(tablet) {
+	.salvattore[data-columns]::before {
+		content: '2 .column.size-1of2';
+	}
+}
+
+@include respond-to(desk) {
+	.salvattore[data-columns]::before {
+		content: '4 .column.size-1of4';
+	}
+}
+

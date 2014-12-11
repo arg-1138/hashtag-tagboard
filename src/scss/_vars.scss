@@ -1,0 +1,153 @@
+/* 
+------------------------------------------------
+BASE
+------------------------------------------------
+*/
+
+// BASE METRICS --------------------------------
+$base-font-size:    14px;
+$base-line-height:  20px;
+
+$baseLineHeight:    $base-line-height;
+$baseFontSize:      $base-font-size;
+
+$userNameFontSize:      12px;
+
+// BASE FACES   --------------------------------
+$sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serifFontFamily:       Georgia, "Times New Roman", Times, serif;
+$monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace;
+$altFontFamily:         $serifFontFamily;
+$baseFontFamily:        $sansFontFamily;
+
+$base-font-family:  $baseFontFamily;
+
+
+// BASE COLORS  --------------------------------
+$base-ui-color:     #dbdbdb;
+$base-text-color:   #000;
+
+/* 
+------------------------------------------------
+FONT SIZES
+------------------------------------------------
+*/
+
+$mega-size:         66px;
+$kilo-size: 		52px;
+
+$h1-size:           26px; // .tam1
+$h2-size:           21px; // .tam2
+$h3-size:           17px; // .tam3
+$h4-size:           16px; // .tam4
+$h5-size:           15px; // .tam5
+$h6-size:           14px; // .tam6
+
+$milli-size: 		13px;
+
+
+/* 
+------------------------------------------------
+METRICS
+------------------------------------------------
+*/
+$base-spacing-unit:     18px;
+$content-width: 		960px;
+
+
+/* 
+------------------------------------------------
+BRAND
+------------------------------------------------
+*/
+
+$brand-color:       #349acc;
+$brand-face:        'FranklinGothic', arial, sans-serif;
+$brand-round:       5px;
+
+
+/* 
+------------------------------------------------
+COLORS
+------------------------------------------------
+*/
+
+
+$bg-color: 			#fbfbfb;
+$medium-color:  	#7c7c7c;
+$light-color: 		#eeeef0;
+$lighter-color:		#F5F5F5;
+
+// Variables
+// -------------------------
+$black:                 #000;
+$grayDarker:            #222;
+$grayDark:              #333;
+$gray:                  #555;
+$grayLight:             #999;
+$grayLighter:           #eee;
+$white:                 #fff;
+
+$blue:                  #049cdb;
+$blueDark:              #0064cd;
+$green:                 #46a546;
+$red:                   #9d261d;
+$yellow:                #ffc40d;
+$orange:                #f89406;
+$pink:                  #c3325f;
+$purple:                #7a43b6;
+
+$brandLight:			#f7f4f4;
+
+$bodyBackground:        $brandLight;
+$textColor:             $grayDark;
+$hrBorder:              $grayLighter;
+
+$liBorder:              $grayLighter;
+
+$linkColor:             #08c;
+$linkColorHover:        darken($linkColor, 15%);
+
+/* 
+------------------------------------------------
+HEADINGS
+------------------------------------------------
+*/
+$headingsFontFamily:    inherit; // empty to use BS default, $baseFontFamily
+$headingsFontWeight:    bold;    // instead of browser default, bold
+$headingsColor:         inherit; // empty to use BS default, $textColor
+
+/* 
+------------------------------------------------
+GRID
+------------------------------------------------
+*/
+
+$gutter:            20px;
+
+
+/* 
+------------------------------------------------
+BREAKPOINTS
+------------------------------------------------
+*/
+
+$breakpoints: (
+    'mobile' '(max-width: 43em)',
+    'tablet' '(max-width: 63em)',
+    'desk' '(min-width: 63.063em)'
+);
+
+
+/* 
+------------------------------------------------
+FRAMEWORK SETTINGS
+------------------------------------------------
+*/
+
+$use-oocss-helpers: true;
+$use-forms: 		true;
+$use-buttons: 		false;
+$use-lists: 		true;
+$use-headings: 		false;
+$use-loader: 		false;

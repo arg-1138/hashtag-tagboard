@@ -1,0 +1,52 @@
+// Links
+// -------------------------
+a {
+	color: $linkColor;
+	text-decoration: none;
+	@include transition(all .3s ease);
+	&:focus,
+	&:hover{
+		color: $linkColorHover;
+		text-decoration: none;
+	}
+}
+
+.btn {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    outline: 0 none;
+    @include transition(all .3s ease);
+    &:hover{
+    	color: $brand-color;
+    }
+}
+
+.salvattore__item__delete{
+	position: absolute;
+	top: 0px;
+	right: 5px;
+	font-size: $h4-size;
+}
+
+#next-holder{
+	position: relative;
+	float: left;
+	width: 100%;
+}
+.btn-next{
+	text-align: center;
+	display: inline-block;
+	padding: 30px;
+	width: 100%;
+	a{
+		padding: 30px;
+		background-color: #362f32;
+		color: white;
+		text-decoration: none;
+		width: 100%;
+		float: left;
+		&:hover{
+			text-decoration: none;
+		}
+	}
+}

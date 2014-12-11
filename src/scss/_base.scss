@@ -1,0 +1,40 @@
+*{
+	-webkit-font-smoothing: antialiased;
+	-webkit-backface-visibility: hidden;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+// Scaffolding
+// -------------------------
+body {
+  margin: 0;
+  font-family: $baseFontFamily;
+  font-size: $baseFontSize;
+  line-height: $baseLineHeight;
+  color: $textColor;
+  background-color: $bodyBackground;
+  text-align:center;
+}
+.container {
+	position:relative;
+	overflow:hidden;
+	margin:0 auto;
+	padding:0;
+	text-align:left;
+}
+
+@include respond-to(tablet) {
+	.content {
+		@include rem-space(padding, 2);
+	}
+}
+
+@include respond-to(mobile) {
+	.content {
+		@include rem-space(padding, 1);
+	}
+}
+
+p {
+	@include rem-space(margin, 0 0 1);
+}

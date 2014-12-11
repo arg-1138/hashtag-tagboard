@@ -1,0 +1,113 @@
+/* 
+------------------------------------------------
+BASE
+------------------------------------------------
+*/
+
+// BASE METRICS --------------------------------
+$base-font-size:    16px!default;
+$base-line-height:  24px!default;
+
+// BASE FACES   --------------------------------
+$base-font-family:  sans-serif!default;
+
+// BASE COLORS  --------------------------------
+$base-ui-color:     #ccc!default;
+$base-text-color:   #333!default;
+
+
+
+/* 
+------------------------------------------------
+RESPONSIVE
+------------------------------------------------
+*/
+
+$breakpoints: (
+    'mobile' '(max-width: 480px)',
+    'tablet' '(min-width: 481px) and (max-width: 1023px)',
+    'desk' '(min-width: 1024px)'
+)!default;
+
+
+
+/* 
+------------------------------------------------
+FONT SIZES
+------------------------------------------------
+*/
+
+$giga-size:         96px!default;
+$mega-size:         72px!default;
+$kilo-size:         48px!default;
+
+$h1-size:           36px!default; // .tam1
+$h2-size:           30px!default; // .tam2
+$h3-size:           24px!default; // .tam3
+$h4-size:           20px!default; // .tam4
+$h5-size:           16px!default; // .tam5
+$h6-size:           14px!default; // .tam6
+
+$milli-size:        12px!default;
+$micro-size:        10px!default;
+
+
+
+/* 
+------------------------------------------------
+BRAND
+------------------------------------------------
+*/
+
+$brand-color:       #4a8ec2!default;
+$brand-face:        "Helvetica Neue", sans-serif!default;
+$brand-round:        4px!default;
+
+
+/* 
+------------------------------------------------
+GRID
+------------------------------------------------
+*/
+
+$gutter:            30px!default;
+
+
+
+/* 
+------------------------------------------------
+METRICS VARS
+------------------------------------------------
+*/
+
+$base-spacing-unit:     $base-line-height!default;
+$half-spacing-unit:     $base-spacing-unit / 2!default;
+$double-spacing-unit:   $base-spacing-unit * 2!default;
+$line-height-ratio:     $base-line-height / $base-font-size;
+
+
+/* 
+------------------------------------------------
+LOADER VARS
+------------------------------------------------
+*/
+
+$loader-center: 				true!default;
+$loader-dotsize: 				15px!default;
+$loader-dotcolor: 				#000!default;
+$loader-animation-duration: 	1.2s!default;
+$loader-animation-move: 		25px!default;
+
+
+/* 
+------------------------------------------------
+FRAMEWORK SETTINGS
+------------------------------------------------
+*/
+
+$use-oocss-helpers: true!default;
+$use-forms: true!default;
+$use-buttons: true!default;
+$use-lists: true!default;
+$use-headings: true!default;
+$use-loader: true!default;
