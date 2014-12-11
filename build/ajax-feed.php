@@ -26,10 +26,7 @@ switch ($acc) {
         deleteItem($db);
         break;
     default:
-        // if(!empty($page) && $page>1){
-        //     echo outputFeed($db, $hashtag, $page);
-        // }
-    echo outputFeed($db, $hashtag, $page);
+        echo outputFeed($db, $hashtag, $page);
         break;
 }
 
