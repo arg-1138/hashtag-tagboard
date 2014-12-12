@@ -1,4 +1,4 @@
 hashtag-tagboard
 ================
 
-Under development. Not stable.
+Under development.
