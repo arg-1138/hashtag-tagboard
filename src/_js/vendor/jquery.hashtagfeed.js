@@ -80,10 +80,10 @@
 
 							var self = $(this).parent();
 							if (confirm('Are you sure you want to delete it?')) {
-								var delUrl = "/hashtag-pull/build/ajax-feed.php?acc=delete";
+								var delUrl = "/ajax-feed.php?acc=delete";
 								$.ajax({
 									type: "POST",
-									url: "/hashtag-pull/build/ajax-feed.php",
+									url: "/ajax-feed.php",
 									data: {id: self.data('id'), acc: 'delete'},
 									dataType: "json"
 								}).done(function(data) {
@@ -118,7 +118,7 @@
 			},
 			getFeed: function(){
 				$.ajax({
-					url: "/hashtag-pull/build/ajax-feed.php",
+					url: "/ajax-feed.php",
 					data: {page: 1},
 					dataType: "json"
 				}).done(function(feed_data) {
@@ -145,7 +145,7 @@
 
 					
 					$.ajax({
-						url: "/hashtag-pull/build/ajax-feed.php",
+						url: "/ajax-feed.php",
 						data: {page: nP},
 						dataType: "json"
 					}).done(function(feed_data) {

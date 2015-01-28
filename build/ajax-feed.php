@@ -108,7 +108,7 @@ class DomFinder {
 }
 
 function shouldUpdate($db, $hashtag){
-    $db_con = mysqli_connect($db['host'], $db['user'], $db['password'], $db['name']);
+    $db_con = mysql_connect($db['host'], $db['user'], $db['password'], $db['name']);
     $now = time();
     $query = mysqli_query($db_con, "SELECT * FROM ".$db['media_table']." WHERE hashtag='$hashtag' AND source='twitter' ORDER BY source_id DESC LIMIT 1");
     $result = mysqli_fetch_array($query);
@@ -134,7 +134,6 @@ function updateTwitter($db, $twitter, $hashtag){
             'count' => 100
         )
     );
-    //print_r($content['twitter']);
     $content['vine'] = $connection->get(
         "search/tweets", array(
             'q' => '#'.$hashtag.' vine.co filter:links',
@@ -183,14 +182,13 @@ function updateTwitter($db, $twitter, $hashtag){
                     }
                     if ($is_tweet || $is_vine){
                         if (mysqli_query($db_con,
-                            "INSERT INTO ".$db['media_table']." (time_now, source_id, created_at, user_id, name, screen_name, user_location, text, media_url, media_url_https, source, type, hashtag, post_url) ".
-                            "VALUES('$time_now', '$twitter_id', '$created_at','$user_id','$this_name','$screen_name', '$user_location', '$text', '$media_url', '$media_url_https', 'twitter', '$type', '$hashtag', '$link_post')")){}
+                            "INSERT INTO ".$db['media_table']." (time_now, source_id, created_at, user_id, name, screen_name, user_location, text, media_url, media_url_https, source, type, hashtag, post_url, approved) ".
+                            "VALUES('$time_now', '$twitter_id', '$created_at','$user_id','$this_name','$screen_name', '$user_location', '$text', '$media_url', '$media_url_https', 'twitter', '$type', '$hashtag', '$link_post', 1)")){}
                     }
                 }
             }
         }
     }
-
     mysqli_close($db_con);
 }
 
@@ -235,8 +233,8 @@ function updateInstagram($db, $instagram, $hashtag){
         }
 
         if (mysqli_query($db_con,
-            "INSERT INTO ".$db['media_table']." (time_now, source_id, created_at, user_id, name, screen_name, text, likes, media_url, media_url_https, source, type, hashtag, post_url) ".
-            "VALUES('$time_now', '$source_id', '$created_at','$user_id','$this_name','$screen_name', '$text', '$likes', '$media_url', '$media_url_https', 'instagram', '$type', '$hashtag', '$post_link')")){}
+            "INSERT INTO ".$db['media_table']." (time_now, source_id, created_at, user_id, name, screen_name, text, likes, media_url, media_url_https, source, type, hashtag, post_url, approved) ".
+            "VALUES('$time_now', '$source_id', '$created_at','$user_id','$this_name','$screen_name', '$text', '$likes', '$media_url', '$media_url_https', 'instagram', '$type', '$hashtag', '$post_link', 1)")){}
     }
 
     mysqli_close($db_con);
@@ -244,6 +242,11 @@ function updateInstagram($db, $instagram, $hashtag){
 
 
 function outputFeed($db, $hashtag, $page = 1){
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+
     $limit = " LIMIT 0, ".ITEMS_PER_PAGE;
     if ( ITEMS_PER_PAGE == 'all' ) {
         $limit = "";
@@ -255,8 +258,11 @@ function outputFeed($db, $hashtag, $page = 1){
     $sql = "SELECT * FROM ".$db['media_table']." WHERE hashtag='$hashtag' AND approved = 1 ORDER BY time_now DESC ".$limit;
     $query = mysqli_query($db_con, $sql);
     if (mysqli_num_rows($query) > 0) {
+        while ($row = mysqli_fetch_assoc($query)) {
+          $results['results'][] = $row;
+        }
         $results['admin'] = HASHTAG_ALLOWED_ADMIN;
-        $results['results'] = mysqli_fetch_all($query, MYSQLI_ASSOC);
+        //$results['results'] = mysqli_fetch_all($query, MYSQLI_ASSOC);
         return json_encode($results);
     }else{
         return false;

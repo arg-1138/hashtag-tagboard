@@ -10989,7 +10989,7 @@ function AsyncLoad(selector, assets, pluginname, opts) {
 	(function (window, $, undefined) {
 		
 		// Hashtag feed plugin
-		AsyncLoad('#grid', '/hashtag-pull/build/js/vendor/jquery.hashtagfeed.js', 'hashtagfeed');
+		AsyncLoad('#grid', '/js/vendor/jquery.hashtagfeed.js', 'hashtagfeed');
 
 	}(window, jQuery));
 });
